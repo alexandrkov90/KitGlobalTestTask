@@ -4,7 +4,6 @@ import Input from "../../UI/FormElements/Input/Input";
 import Select from "../../UI/FormElements/Select/Select";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchConversation} from "../../../store/actions/conversationAction";
-import {fetchCurrencyList} from "../../../store/actions/currencyListAction";
 import Loader from "../../UI/Loader/Loader"
 import CurrencyListItem from "../CurrencyListItem/CurrencyListItem";
 import {currenciesList} from "../../../globalVariables/variables";
@@ -19,10 +18,6 @@ const CurrencyExchange = () => {
     const conversationData = useSelector(state => state.conversationState)
 
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchConversation(baseCurrency, changeCurrency))
-    }, [])
 
     useEffect(()=>{
         dispatch(fetchConversation(baseCurrency, changeCurrency))

@@ -1,0 +1,24 @@
+@import "/src/public/styles/variables";
+
+.Button {
+  border: 1px solid;
+  border-radius: 5px;
+  background: transparent;
+  padding: 5px 15px;
+  height: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.25s;
+  transition-property: border-color, color, background;
+}
+
+.orange{
+  border-color: $primaryColor;
+  color: $primaryColor;
+  background: $lightColor;
+  &:hover{
+    border-color: $primaryColor;
+    color: $lightColor;
+    background: $primaryColor;
+  }
+}
