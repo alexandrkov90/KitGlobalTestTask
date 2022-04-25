@@ -1,3 +1,14 @@
+@import "src/public/styles/variables";
+
+
 html {
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 1.2;
+  @media screen and (max-width: $md-max) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-size: 1rem;
 }

@@ -1,0 +1,14 @@
+@import "src/public/styles/variables";
+
+.PageTitleWrapper {
+  background: $primaryColor;
+  padding: 8rem 0 3rem;
+  margin-bottom: 4rem;
+}
+
+.PageTitle {
+  text-align: center;
+  color: $lightColor;
+  font-size: 2.75rem;
+  font-weight: 600;
+}

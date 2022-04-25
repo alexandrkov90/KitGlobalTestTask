@@ -1,0 +1,76 @@
+@import "src/public/styles/variables";
+
+.SelectWrapper {
+  cursor: pointer;
+  position: relative;
+}
+
+.SelectField {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+
+.SelectLabel {
+  min-width: 40px;
+}
+
+.SelectDropdownIcon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  transform: rotate(90deg);
+  transform-origin: center center;
+  transition: transform 0.25s;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    background: $darkColor;
+    height: 1px;
+    width: 5px;
+    margin-right: -3px;
+    transform-origin: right;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.SelectDropdown {
+  position: absolute;
+  padding: 5px;
+  left: 0;
+  top: 100%;
+  background: #ffffff;
+  color: #000000;
+  min-width: 100%;
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+  transition: transform 0.3s;
+  box-shadow: 1.5px 2.6px 10px rgba(119, 119, 119, 0.1);
+  z-index: 11;
+}
+
+.SelectFieldActive {
+  .SelectDropdownIcon {
+    transform: rotate(-90deg);
+  }
+}
+
+.SelectDropdownActive {
+  transform: rotateX(0);
+
+}
+
+

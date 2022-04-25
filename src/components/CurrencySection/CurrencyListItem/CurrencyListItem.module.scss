@@ -1,0 +1,16 @@
+@import "src/public/styles/variables";
+
+.CurrencyListItem {
+  color: $darkColor;
+  font-size: 0.875rem;
+  padding: 2px 0;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+.CurrencyListItemActive {
+  color: $primaryColor;
+}
