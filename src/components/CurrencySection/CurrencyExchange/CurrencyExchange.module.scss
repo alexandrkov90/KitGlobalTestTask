@@ -1,0 +1,24 @@
+@import "src/public/styles/variables";
+
+.CurrencyExchangeBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $darkColor;
+  position: relative;
+  >*{
+   flex: 0 0 15%;
+    margin: 0 10px;
+  }
+}
+
+.currencyExchangeLabel{
+  text-align: center;
+  flex: 0 1 auto;
+
+}
+
+.currencyExchangeResult{
+  font-size: 1.5rem;
+  color: $primaryColor;
+}

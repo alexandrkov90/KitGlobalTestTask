@@ -1,9 +1,9 @@
-
+import Router from "./components/Router/Router"
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <Router/>
+    </>
   );
 }
 
