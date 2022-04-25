@@ -5,7 +5,6 @@ import classNames from "classnames/bind"
 const cx = classNames.bind(styles)
 
 const Button = ({title,onClick, theme}) => {
-    console.log('render button ' + title)
     const buttonClass = cx({
         Button: true,
         [theme]: true

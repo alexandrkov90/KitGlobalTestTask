@@ -6,19 +6,38 @@
   justify-content: center;
   color: $darkColor;
   position: relative;
-  >*{
-   flex: 0 0 15%;
+
+  > * {
+    flex: 0 0 15%;
     margin: 0 10px;
+
+  }
+
+  @media screen and (max-width: $xs-max) {
+    flex-wrap: wrap;
+    align-items: center;
+    > * {
+      flex: 0 0 100%;
+      margin: 0 0 20px;
+
+    }
   }
 }
 
-.currencyExchangeLabel{
+.currencyExchangeLabel {
   text-align: center;
-  flex: 0 1 auto;
-
+  @media screen and (min-width: $sm-min){
+    flex: 0 1 auto;
+  }
+  @media screen and (max-width: $xs-max) {
+    font-size: 1.5rem;
+  }
 }
 
-.currencyExchangeResult{
+.currencyExchangeResult {
   font-size: 1.5rem;
   color: $primaryColor;
+  @media screen and (max-width: $xs-max) {
+    text-align: center;
+  }
 }
