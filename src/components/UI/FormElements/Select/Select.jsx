@@ -5,7 +5,6 @@ import classNames from "classnames/bind";
 import {useOutsideClick} from "../../../../hooks/useOtsideClick";
 
 
-
 let cx = classNames.bind(styles);
 
 const Select = ({title, children}) => {
@@ -18,7 +17,7 @@ const Select = ({title, children}) => {
     let SelectFieldClasses = cx({
         SelectField: true,
         SelectFieldActive: activeSelect,
-        [elementsStyle.FormElements]:true
+        [elementsStyle.FormElements]: true
     });
 
     let SelectDropdownClasses = cx({

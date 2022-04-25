@@ -12,11 +12,12 @@
   transition-property: border-color, color, background;
 }
 
-.orange{
+.orange {
   border-color: $primaryColor;
   color: $primaryColor;
   background: $lightColor;
-  &:hover{
+
+  &:hover {
     border-color: $primaryColor;
     color: $lightColor;
     background: $primaryColor;

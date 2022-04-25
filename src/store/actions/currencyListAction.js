@@ -6,7 +6,7 @@ import {
 } from "./actionTypes";
 
 
-function getCurrencyListURL(base){
+function getCurrencyListURL(base) {
     return `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_NOT_SECRET_EXCHANGE_API_KEY}/latest/${base}`
 }
 
@@ -17,14 +17,14 @@ export function fetchCurrencyList(base) {
         dispatch(fetchCurrencyListStart())
 
         try {
-            const response = await fetch(responseURL,{
-                method:"GET",
+            const response = await fetch(responseURL, {
+                method: "GET",
                 'Content-Type': 'application/json; charset=utf-8',
             })
             const req = await response.json()
             dispatch(fetchCurrencyListResult(req.conversion_rates))
 
-        } catch (error){
+        } catch (error) {
             dispatch(fetchCurrencyListError(error))
         }
         dispatch(fetchCurrencyListSuccess())

@@ -1,4 +1,9 @@
-import {CONVERSATION_START, CONVERSATION_SUCCESS, CONVERSATION_ERROR, CONVERSATION_RESULT} from "../actions/actionTypes";
+import {
+    CONVERSATION_START,
+    CONVERSATION_SUCCESS,
+    CONVERSATION_ERROR,
+    CONVERSATION_RESULT
+} from "../actions/actionTypes";
 
 const conversationState = {
     loading: false,
@@ -6,8 +11,8 @@ const conversationState = {
     error: null
 }
 
-export default function conversationReducer(state=conversationState,action){
-    switch (action.type){
+export default function conversationReducer(state = conversationState, action) {
+    switch (action.type) {
         case CONVERSATION_START :
             return {
                 ...state,
@@ -29,6 +34,7 @@ export default function conversationReducer(state=conversationState,action){
                 ...state,
                 data: action.data
             }
-        default : return state
+        default :
+            return state
     }
 }

@@ -4,13 +4,13 @@ import classNames from "classnames/bind";
 
 let cx = classNames.bind(styles)
 
-const CurrencyListItem = ({title,current, handleClick}) =>{
+const CurrencyListItem = ({title, current, handleClick}) => {
     const itemClasses = cx({
         CurrencyListItem: true,
         CurrencyListItemActive: current === title
     })
     return (
-        <div className={itemClasses} onClick={()=>handleClick(title)}>
+        <div className={itemClasses} onClick={() => handleClick(title)}>
             {title}
         </div>
     )

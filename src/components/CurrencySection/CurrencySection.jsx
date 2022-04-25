@@ -4,11 +4,11 @@ import Container from "../Container/Container";
 import SectionTitle from "../Typography/SectionTitle/SectionTitle";
 import CurrencyExchange from "./CurrencyExchange/CurrencyExchange";
 
-const CurrencySection = () =>{
+const CurrencySection = () => {
     return (
         <section className={styles.Section}>
             <Container>
-                <SectionTitle title={'Выберите валюты для конвертации'} />
+                <SectionTitle title={'Выберите валюты для конвертации'}/>
                 <CurrencyExchange/>
             </Container>
 

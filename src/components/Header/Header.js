@@ -9,8 +9,8 @@ const Header = () => {
     return (
         <header className={styles.Header}>
             <Container>
-                <Button title="Конвертер валют" theme="orange" onClick={()=>navigate('/')}/>
-                <Button title="Курс валют" theme="orange" onClick={()=>navigate('/currency-list')}/>
+                <Button title="Конвертер валют" theme="orange" onClick={() => navigate('/')}/>
+                <Button title="Курс валют" theme="orange" onClick={() => navigate('/currency-list')}/>
             </Container>
         </header>
     )

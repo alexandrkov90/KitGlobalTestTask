@@ -6,8 +6,8 @@ import CurrencyListSection from "../../components/CurrencyListSection/CurrencyLi
 const CurrencyPage = () => {
     return (
         <Layout metaTitle="Курс валют" metaDescription="Описание для страницы курса валют">
-            <PageTitle title="Курс валют" />
-           <CurrencyListSection />
+            <PageTitle title="Курс валют"/>
+            <CurrencyListSection/>
         </Layout>
     )
 }

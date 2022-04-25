@@ -4,7 +4,7 @@ import classNames from "classnames/bind"
 
 const cx = classNames.bind(styles)
 
-const Button = ({title,onClick, theme}) => {
+const Button = ({title, onClick, theme}) => {
     const buttonClass = cx({
         Button: true,
         [theme]: true

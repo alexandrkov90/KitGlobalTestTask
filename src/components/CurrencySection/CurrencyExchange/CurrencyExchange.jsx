@@ -19,16 +19,15 @@ const CurrencyExchange = () => {
 
     const dispatch = useDispatch()
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchConversation(baseCurrency, changeCurrency))
-    },[baseCurrency,changeCurrency])
+    }, [baseCurrency, changeCurrency])
 
     useEffect(() => {
         if (conversationData.data && conversationData.error === null) {
             setCurrencyRates(conversationData.data.conversion_rate)
         }
     }, [conversationData.data])
-
 
 
     useEffect(() => {
@@ -40,7 +39,7 @@ const CurrencyExchange = () => {
         let result = number * currencyRates
         setResult(result.toFixed(2))
 
-    }, [sum,currencyRates])
+    }, [sum, currencyRates])
 
     const handleChangeSum = (number) => {
         if (number < 0) {
@@ -51,18 +50,18 @@ const CurrencyExchange = () => {
     }
 
     function CurrenciesList(currencyExclude, handleClick) {
-       return (
-           currenciesList.map((title) => {
-               return (
-                   <CurrencyListItem
-                       current={currencyExclude}
-                       title={title}
-                       handleClick={handleClick}
-                       key={title}
-                   />
-               )
-           })
-       )
+        return (
+            currenciesList.map((title) => {
+                return (
+                    <CurrencyListItem
+                        current={currencyExclude}
+                        title={title}
+                        handleClick={handleClick}
+                        key={title}
+                    />
+                )
+            })
+        )
     }
 
     return (
@@ -75,18 +74,18 @@ const CurrencyExchange = () => {
                 onChange={handleChangeSum}
             />
             <Select title={baseCurrency}>
-                {CurrenciesList(baseCurrency,setBaseCurrency)}
+                {CurrenciesList(baseCurrency, setBaseCurrency)}
             </Select>
             <span className={styles.currencyExchangeLabel}> в </span>
             <Select title={changeCurrency}>
                 {CurrenciesList(changeCurrency, setChangeCurrency)}
 
             </Select>
-                <span className={styles.currencyExchangeResult}>{result}</span>
+            <span className={styles.currencyExchangeResult}>{result}</span>
 
-                {conversationData.loading === true && <Loader/>}
+            {conversationData.loading === true && <Loader/>}
         </div>
-)
+    )
 }
 
 export default CurrencyExchange

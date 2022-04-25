@@ -1,5 +1,5 @@
 import styles from "./CurrencyListSection.module.scss"
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import Container from "../Container/Container";
 import SectionTitle from "../Typography/SectionTitle/SectionTitle";
 import Select from "../UI/FormElements/Select/Select";

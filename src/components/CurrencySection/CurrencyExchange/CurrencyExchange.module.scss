@@ -26,7 +26,7 @@
 
 .currencyExchangeLabel {
   text-align: center;
-  @media screen and (min-width: $sm-min){
+  @media screen and (min-width: $sm-min) {
     flex: 0 1 auto;
   }
   @media screen and (max-width: $xs-max) {

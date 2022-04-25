@@ -1,4 +1,9 @@
-import {CURRENCY_LIST_START, CURRENCY_LIST_SUCCESS, CURRENCY_LIST_ERROR, CURRENCY_LIST_RESULT} from "../actions/actionTypes";
+import {
+    CURRENCY_LIST_START,
+    CURRENCY_LIST_SUCCESS,
+    CURRENCY_LIST_ERROR,
+    CURRENCY_LIST_RESULT
+} from "../actions/actionTypes";
 
 const currencyListState = {
     loading: false,
@@ -6,8 +11,8 @@ const currencyListState = {
     error: null
 }
 
-export default function currencyListReducer(state=currencyListState,action){
-    switch (action.type){
+export default function currencyListReducer(state = currencyListState, action) {
+    switch (action.type) {
         case CURRENCY_LIST_START :
             return {
                 ...state,
@@ -29,6 +34,7 @@ export default function currencyListReducer(state=currencyListState,action){
                 ...state,
                 data: action.data
             }
-        default : return state
+        default :
+            return state
     }
 }

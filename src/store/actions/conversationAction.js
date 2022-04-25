@@ -1,23 +1,23 @@
 import {CONVERSATION_START, CONVERSATION_SUCCESS, CONVERSATION_ERROR, CONVERSATION_RESULT} from "./actionTypes";
 
 
-function getConvertURL(base, to){
+function getConvertURL(base, to) {
     return `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_NOT_SECRET_EXCHANGE_API_KEY}/pair/${base}/${to}`
 }
 
 export function fetchConversation(base, to) {
-    const responseURL = getConvertURL(base,to)
+    const responseURL = getConvertURL(base, to)
     return async dispatch => {
         dispatch(fetchConversationStart())
 
         try {
-            const response = await fetch(responseURL,{
-                method:"GET"
+            const response = await fetch(responseURL, {
+                method: "GET"
             })
             const req = await response.json()
             dispatch(fetchConversationResult(req))
 
-        } catch (error){
+        } catch (error) {
             dispatch(fetchConversationError(error))
         }
         dispatch(fetchConversationSuccess())

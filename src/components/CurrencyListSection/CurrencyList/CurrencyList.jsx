@@ -6,24 +6,21 @@ import Loader from "../../UI/Loader/Loader";
 import {currenciesList} from "../../../globalVariables/variables";
 
 const CurrencyList = ({baseCurrency}) => {
-    const list = useSelector(state=>state.currencyState)
+    const list = useSelector(state => state.currencyState)
     const dispatch = useDispatch()
 
-
-
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(fetchCurrencyList(baseCurrency))
-    },[baseCurrency])
-
+    }, [baseCurrency])
 
     return (
         <div className={styles.CurrencyList}>
             {list?.data && (
-                Object.keys(list.data).map(key=>{
-                    if(baseCurrency === key){
+                Object.keys(list.data).map(key => {
+                    if (baseCurrency === key) {
                         return false
                     }
-                    if(!currenciesList.includes(key)){
+                    if (!currenciesList.includes(key)) {
                         return null
                     }
                     return (
@@ -34,7 +31,7 @@ const CurrencyList = ({baseCurrency}) => {
                     )
                 })
             )}
-            {list.loading === true && <Loader />}
+            {list.loading === true && <Loader/>}
         </div>
     )
 }

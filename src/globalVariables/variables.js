@@ -1,2 +1,2 @@
-export const currenciesList = ["USD","EUR","UAH","PLN","GBP","CAD"]
+export const currenciesList = ["USD", "EUR", "UAH", "PLN", "GBP", "CAD"]
 
