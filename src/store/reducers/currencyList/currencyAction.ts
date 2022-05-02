@@ -1,7 +1,7 @@
 import axios from "axios";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 
-function getCurrencyListURL(base:string) {
+const getCurrencyListURL = (base:string) => {
     return `https://v6.exchangerate-api.com/v6/${process.env.REACT_APP_NOT_SECRET_EXCHANGE_API_KEY}/latest/${base}`
 }
 

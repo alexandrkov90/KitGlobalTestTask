@@ -52,7 +52,7 @@ const CurrencyExchange = () => {
         }
     }
 
-    function CurrenciesList(currencyExclude: string, handleClick:  React.Dispatch<React.SetStateAction<string>>) {
+    const CurrenciesList = (currencyExclude: string, handleClick:  React.Dispatch<React.SetStateAction<string>>) => {
         return (
             currenciesList.map((title) => {
                 return (

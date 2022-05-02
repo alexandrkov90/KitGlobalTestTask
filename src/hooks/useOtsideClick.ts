@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 
-export default function useOutsideClick(ref: React.MutableRefObject<HTMLDivElement | null>, setState: (value: boolean) => void) {
+const useOutsideClick = (ref: React.MutableRefObject<HTMLDivElement | null>, setState: (value: boolean) => void) => {
     useEffect(() => {
-        function handleClickOutside(event:MouseEvent):void {
+        const handleClickOutside = (event:MouseEvent) => {
 
             if (
                 ref.current &&
@@ -19,3 +19,5 @@ export default function useOutsideClick(ref: React.MutableRefObject<HTMLDivEleme
         };
     }, [ref]);
 }
+
+export default useOutsideClick
