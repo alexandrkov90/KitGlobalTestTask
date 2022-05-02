@@ -2,8 +2,8 @@ import styles from "./CurrencyExchange.module.scss"
 import React, {useState, useEffect} from "react"
 import Input from "../../UI/FormElements/Input/Input";
 import Select from "../../UI/FormElements/Select/Select";
-import {useDispatch, useSelector} from "react-redux";
-import {fetchConversation} from "../../../store/actions/conversationAction";
+import {useAppSelector, useAppDispatch} from "../../../hooks/redux";
+import {fetchConversation} from "../../../store/reducers/conversation/conversationAction";
 import Loader from "../../UI/Loader/Loader"
 import CurrencyListItem from "../CurrencyListItem/CurrencyListItem";
 import {currenciesList} from "../../../globalVariables/variables";
@@ -15,41 +15,44 @@ const CurrencyExchange = () => {
     const [changeCurrency, setChangeCurrency] = useState('UAH')
     const [currencyRates, setCurrencyRates] = useState(0)
 
-    const conversationData = useSelector(state => state.conversationState)
+    const {data:conversationData, loading} = useAppSelector(state => state.conversationState)
 
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(fetchConversation(baseCurrency, changeCurrency))
+        dispatch(fetchConversation({
+            base:baseCurrency,
+            to:changeCurrency
+        }))
     }, [baseCurrency, changeCurrency])
 
     useEffect(() => {
-        if (conversationData.data && conversationData.error === null) {
-            setCurrencyRates(conversationData.data.conversion_rate)
+        if (conversationData ) {
+            setCurrencyRates(conversationData)
         }
-    }, [conversationData.data])
+    }, [conversationData])
 
 
     useEffect(() => {
         let number = +sum
         if (typeof number !== 'number') {
             setResult(0)
-            return false
         }
         let result = number * currencyRates
-        setResult(result.toFixed(2))
+        setResult(+result.toFixed(2))
+
 
     }, [sum, currencyRates])
 
-    const handleChangeSum = (number) => {
-        if (number < 0) {
+    const handleChangeSum = (number: any) => {
+        if (+number < 0) {
             setSum(0)
         } else {
             setSum(number)
         }
     }
 
-    function CurrenciesList(currencyExclude, handleClick) {
+    function CurrenciesList(currencyExclude: string, handleClick:  React.Dispatch<React.SetStateAction<string>>) {
         return (
             currenciesList.map((title) => {
                 return (
@@ -83,7 +86,7 @@ const CurrencyExchange = () => {
             </Select>
             <span className={styles.currencyExchangeResult}>{result}</span>
 
-            {conversationData.loading === true && <Loader/>}
+            {loading === true && <Loader/>}
         </div>
     )
 }

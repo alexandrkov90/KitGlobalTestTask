@@ -18,7 +18,7 @@ const CurrencyListSection = () => {
                 <SectionTitle title="Выберите валюту"/>
                 <div className={styles.SelectWrapper}>
                     <Select title={baseCurrency}>
-                        {currenciesList.map((title) => {
+                        {currenciesList.map((title:string) => {
                             return (
                                 <CurrencyListItem
                                     current={baseCurrency}

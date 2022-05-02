@@ -1,16 +1,24 @@
 import elementsStyle from "../FormElements.module.scss"
 import styles from "./Input.module.scss"
-import React from "react"
+import React, {FC} from "react"
 import classNames from "classnames";
 
-const Input = ({type, name, placeholder, value, onChange}) => {
+type InputProps = {
+    type: string,
+    name: string,
+    placeholder?: string,
+    value:string | number,
+    onChange: (e: string | number) => void
+}
+
+const Input: FC<InputProps> = ({type, name, placeholder, value, onChange}) => {
     return (
         <input
             type={type}
             name={name}
             placeholder={placeholder}
             value={value}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e):void => onChange(e.target.value)}
             className={classNames({
                 [styles.Input]: true,
                 [elementsStyle.FormElements]: true

@@ -1,7 +1,14 @@
-import React from "react"
+import React, {FC} from "react"
 import {Helmet} from "react-helmet";
 
-const Layout = ({metaTitle, metaDescription, className, children}) => {
+type LayoutProps = {
+    metaTitle?:string,
+    metaDescription?:string,
+    className?:string,
+    children:React.ReactNode,
+}
+
+const Layout: FC<LayoutProps> = ({metaTitle, metaDescription, className, children}) => {
     return (
         <>
             <Helmet>

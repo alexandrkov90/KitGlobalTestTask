@@ -1,17 +1,25 @@
 import styles from "./Button.module.scss"
-import React from "react"
+import React, {FC} from "react"
 import classNames from "classnames/bind"
 
 const cx = classNames.bind(styles)
 
-const Button = ({title, onClick, theme}) => {
+type ButtonProps = {
+    title:string,
+    onClick?: () => void,
+    theme: string
+}
+const Button: FC<ButtonProps> = ({title, onClick, theme}) => {
     const buttonClass = cx({
         Button: true,
         [theme]: true
     })
 
     return (
-        <button className={buttonClass} onClick={onClick}>
+        <button
+            className={buttonClass}
+            onClick={onClick}
+        >
             {title}
         </button>
     )

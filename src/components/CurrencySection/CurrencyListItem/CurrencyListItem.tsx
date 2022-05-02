@@ -1,10 +1,16 @@
 import styles from "./CurrencyListItem.module.scss"
-import React from "react"
+import React, {FC} from "react"
 import classNames from "classnames/bind";
 
 let cx = classNames.bind(styles)
 
-const CurrencyListItem = ({title, current, handleClick}) => {
+type CurrencyListItemProps = {
+    title: string,
+    current:string,
+    handleClick:(title: string) => void,
+}
+
+const CurrencyListItem: FC<CurrencyListItemProps> = ({title, current, handleClick}) => {
     const itemClasses = cx({
         CurrencyListItem: true,
         CurrencyListItemActive: current === title

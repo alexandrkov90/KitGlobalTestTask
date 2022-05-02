@@ -1,8 +1,12 @@
 import styles from "./PageTitle.module.scss"
-import React from "react"
+import React, {FC} from "react"
 import Container from "../../Container/Container";
 
-const PageTitle = ({title}) => {
+type PageTitleProps = {
+    title:string
+}
+
+const PageTitle: FC<PageTitleProps> = ({title}) => {
     return (
         <section className={styles.PageTitleWrapper}>
             <Container>

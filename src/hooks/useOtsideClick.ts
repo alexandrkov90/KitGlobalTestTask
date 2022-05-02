@@ -1,11 +1,12 @@
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 
-export function useOutsideClick(ref, setState) {
+export default function useOutsideClick(ref: React.MutableRefObject<HTMLDivElement | null>, setState: (value: boolean) => void) {
     useEffect(() => {
-        function handleClickOutside(event) {
+        function handleClickOutside(event:MouseEvent):void {
+
             if (
                 ref.current &&
-                !ref.current.contains(event.target) &&
+                !ref.current.contains(event.target as Node) &&
                 typeof setState === "function"
             ) {
                 setState(false);

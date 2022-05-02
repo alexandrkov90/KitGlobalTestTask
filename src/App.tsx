@@ -1,7 +1,8 @@
-import Router from "./components/Router/Router"
+import {FC} from "react"
+import Router from "./router/Router"
 import Header from "./components/Header/Header";
 
-function App() {
+const App: FC = () => {
     return (
         <>
             <Header/>
